@@ -4,6 +4,7 @@ package net.gaven.redisdemo.schedule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.script.DefaultRedisScript;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -48,6 +49,7 @@ public class ClusterRedisLock {
                 String name=(String) redisTemplate.opsForValue().get(key);
                 System.out.println("lock is used by："+name);
                 logger.info("lock is used by："+name);
+                return;
             }else {
                 redisTemplate.opsForValue().set(key,valueHost,20000);
             }
@@ -60,7 +62,8 @@ public class ClusterRedisLock {
         }
 
 
-
     }
+
+
 
 }

@@ -41,12 +41,12 @@ public class RedisConfig {
 //        //设置序列化Key的实例化对象
         redisTemplate.setKeySerializer(stringRedisSerializer);
 //        //设置序列化Value的实例化对象
-//        redisTemplate.setValueSerializer(stringRedisSerializer);
+        redisTemplate.setValueSerializer(stringRedisSerializer);
 
         redisTemplate.setHashKeySerializer(stringRedisSerializer);
         redisTemplate.setHashValueSerializer(stringRedisSerializer);
 
-        redisTemplate.setValueSerializer(new GenericJackson2JsonRedisSerializer());
+//        redisTemplate.setValueSerializer(new GenericJackson2JsonRedisSerializer());
         redisTemplate.setConnectionFactory(factory);
         return redisTemplate;
 //        @Bean

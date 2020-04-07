@@ -183,17 +183,17 @@ public class RankService implements InitializingBean {
     @Override
     public void afterPropertiesSet() throws Exception {
         System.out.println("======enter init bean=======");
-        List<User> all = userMapper.findAll();
-        for (User user:all){
-
-            System.out.println(user);
-            redisService.add("xxxxx",user);
-
-
-        }
-
-
-        this.rankSaleAdd();
+//        List<User> all = userMapper.findAll();
+//        for (User user:all){
+//
+//            System.out.println(user);
+//            redisService.add("xxxxx",user);
+//
+//
+//        }
+//
+//
+//        this.rankSaleAdd();
     }
 
 }
